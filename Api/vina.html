@@ -6,10 +6,11 @@
   <title>Vina AI Chat</title>
   <style>
     body {
-      background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1); /* Gradien pink pastel yang lembut */
+      background: #fce4ec;
+      background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1);
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: #37474f; /* Warna teks abu-abu gelap yang elegan */
+      color: #37474f;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -20,7 +21,7 @@
       text-align: center;
       font-size: 2em;
       font-weight: bold;
-      color: #e91e63; /* Aksen pink yang lebih kuat untuk header */
+      color: #e91e63;
       background-color: rgba(255, 255, 255, 0.1);
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       margin-bottom: 30px;
@@ -32,7 +33,7 @@
       left: 20px;
       transform: translateY(-50%);
       font-size: 1.5em;
-      color: #f06292; /* Aksen pink yang lebih cerah untuk ikon */
+      color: #f06292;
       text-shadow: 0 0 10px #f06292;
     }
     .chat-container {
@@ -68,14 +69,14 @@
     }
     .user {
       align-self: flex-end;
-      background-color: rgba(186, 104, 200, 0.6); /* Ungu pastel yang lembut */
+      background-color: rgba(186, 104, 200, 0.6);
       color: #fff;
       border-bottom-right-radius: 3px;
     }
     .bot {
       align-self: flex-start;
-      background-color: rgba(244, 143, 177, 0.6); /* Pink pastel yang lebih lembut */
-      color: #37474f; /* Teks bot juga abu-abu gelap */
+      background-color: rgba(244, 143, 177, 0.6);
+      color: #37474f;
       border-bottom-left-radius: 3px;
     }
     .typing-container {
@@ -85,7 +86,7 @@
     }
     .typing-heart {
       font-size: 1.2em;
-      color: #e91e63; /* Warna pink yang lebih kuat untuk loading */
+      color: #e91e63;
       margin-right: 5px;
       animation: pulse 1.5s infinite ease-in-out;
     }
@@ -112,18 +113,23 @@
       border-radius: 25px;
       border: none;
       outline: none;
-      background-color: rgba(255, 255, 255, 0.05);
-      color: #37474f; /* Warna teks input juga abu-abu gelap */
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #37474f;
       font-size: 1em;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+    }
+    input[type="text"]:focus {
+      background-color: #fff;
     }
     input[type="text"]::placeholder {
-      color: rgba(55, 71, 79, 0.5); /* Placeholder abu-abu yang lebih lembut */
+      color: rgba(55, 71, 79, 0.6);
     }
     button {
       padding: 12px 25px;
       margin-left: 15px;
-      background-color: #f8bbd0; /* Pink pastel untuk tombol */
-      color: #e91e63; /* Aksen pink yang lebih kuat untuk teks tombol */
+      background-color: #f8bbd0;
+      color: #e91e63;
       border: none;
       border-radius: 25px;
       font-weight: bold;
@@ -136,7 +142,6 @@
       transform: scale(1.05);
     }
 
-    /* Responsif */
     @media (max-width: 768px) {
       header {
         font-size: 1.7em;
@@ -218,8 +223,7 @@
   <header>
     <span class="ai-icon-header">💕</span> Vina AI Chat
   </header>
-  <div class="chat-container" id="chat-container">
-    </div>
+  <div class="chat-container" id="chat-container"></div>
   <form id="chat-form">
     <input type="text" id="user-input" placeholder="Tulis pesan..." required />
     <button type="submit">Kirim</button>
